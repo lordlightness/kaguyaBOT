@@ -3,7 +3,8 @@ const qrterm = require("qrcode-terminal")
 const fs = require("fs")
 const cron = require("node-cron")
 const msgHndlr = require("./msgHndlr")
-
+const { chromium } = require("playwright-chromium")
+const { platform } = require("os")
 const client = new Client({
     authStrategy: new LocalAuth(),
     qrMaxRetries: 3,
