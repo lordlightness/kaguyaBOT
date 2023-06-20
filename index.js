@@ -26,7 +26,7 @@ const client = new Client({
             '--force-dark-mode'
         ],
         ignoreHTTPSErrors: true,
-        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+        executablePath: platform() === 'win32' ? chromium.executablePath() : platform() === "linux" ? '/usr/bin/google-chrome-stable' : '',
         //'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
     }
 })
